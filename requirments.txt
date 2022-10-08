@@ -1,4 +1,6 @@
 streamlit
 pandas
 pickle
-scikit-learn
+scikit_learn
+sklearn
+
