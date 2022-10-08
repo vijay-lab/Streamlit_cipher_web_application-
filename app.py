@@ -11,22 +11,11 @@ cipher_text = st.text_input("Enter encrypted text", "")
 
 loaded_vectorizer = pickle.load(open('vectorizer.pickle', 'rb'))
 loaded_model = pickle.load(open('finalized_model.sav', 'rb'))
+plain_text_dict = pickle.load(open('plain_text_dict.var', 'rb'))
 test_vec = loaded_vectorizer.transform([cipher_text])
 cipher_class = loaded_model.predict(test_vec)
 
 st.write(cipher_class)
-
-#
-plain_text = pd.read_csv(r'D:\UoH\Project Cipher 16\Data\train\train.csv')
-
-plain_text_dict =  {item:1 for item in plain_text.text}
-
-
-
-loaded_vectorizer = pickle.load(open('vectorizer.pickle', 'rb'))
-loaded_model = pickle.load(open('finalized_model.sav', 'rb'))
-test_vec = loaded_vectorizer.transform([cipher_text])
-cipher_class = loaded_model.predict(test_vec)
 
 
 
