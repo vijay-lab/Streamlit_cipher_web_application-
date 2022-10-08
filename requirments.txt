@@ -1,7 +1,0 @@
-streamlit
-pandas
-pickle
-scikit_learn
-sklearn
-sklearn.feature_extraction.text
-
