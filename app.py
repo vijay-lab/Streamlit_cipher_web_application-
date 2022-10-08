@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 import pickle
+import sklearn
+import scikit-learn
 
 st.title("Encrypted Text Decryption App")
 cipher_text = st.text_input("Enter encrypted text", "")
