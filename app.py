@@ -1,5 +1,7 @@
 import streamlit as st
 import pandas as pd
+import pickle
+
 st.title("Encrypted Text Decryption App")
 cipher_text = st.text_input("Enter encrypted text", "")
 
