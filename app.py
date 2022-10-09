@@ -8,7 +8,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 
              
 
-random_cipher_df_index = 0
+random_cipher_df_index 
 
 st.title("Encrypted Text Decryption App")
 
@@ -22,7 +22,8 @@ def random_index(plain_text_df):
 
 
 if st.button('Generate new Cipher Text'):
-    random_cipher_df_index = random_index(plain_text_df)
+  
+  random_cipher_df_index = random_index(plain_text_df)
    
 
 st.dataframe(plain_text_df.iloc[random_cipher_df_index])
