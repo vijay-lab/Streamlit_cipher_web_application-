@@ -88,7 +88,7 @@ def find_pt_index(decrypted_text):
         except KeyError:
             continue
 
-    return decrypted_text
+    return decrypted_text_without_padding
 
 
 
