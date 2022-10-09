@@ -115,7 +115,8 @@ def decrypted_text_switch(cipher_text,cipher_class):
 
     if cipher_class == 4:
         dec_text = find_pt_index(decryption_block_l1(decryption_block_l2(decryption_block_l3(decryption_block_l4(cipher_text)))))
-       return dec_text
+    
+    return dec_text
 
 decrypted_text_switch(cipher_text,cipher_class)
 
