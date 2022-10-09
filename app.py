@@ -44,6 +44,7 @@ def predict_cipher_class(cipher_text):
 
 
 cipher_class,plain_text_dict = predict_cipher_class(cipher_text)
+
 if len(cipher_text) > 0:
   
   st.write("The Encryption level is :", str(cipher_class))
@@ -150,5 +151,10 @@ def decrypted_text_switch(cipher_text,cipher_class):
 
 dec_text = decrypted_text_switch(cipher_text,cipher_class)
 
-st.subheader("The decrypted Text is:") 
-st.text(dec_text)
+if len(cipher_text) > 0:
+  
+  st.write("The Encryption level is :", str(cipher_class),"and the decrypted text is",st.text(dec_text))
+  
+  
+#st.subheader("The decrypted Text is:") 
+#st.text(dec_text)
