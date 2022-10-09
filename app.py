@@ -28,7 +28,7 @@ st.dataframe(data = random_cipher_df)
 st.write("Use this cipher text to test the application")
 st.write(random_cipher_df['ciphertext']
 
-cipher_label = None
+
 def predict_cipher_class(cipher_text):
     
     loaded_vectorizer = pickle.load(open('vectorizer.pickle', 'rb'))
