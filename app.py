@@ -16,12 +16,12 @@ def predict_cipher_class(cipher_text):
     plain_text_dict = pickle.load(open('plain_text_dict.var', 'rb'))
     test_vec = loaded_vectorizer.transform([cipher_text])
     cipher_label = loaded_model.predict(test_vec)
-    return cipher_label
+    return cipher_label,plain_text_dict
 
 
 
-cipher_class = predict_cipher_class(cipher_text)
-st.write("The Encryption level is :",cipher_class)
+cipher_class,plain_text_dict = predict_cipher_class(cipher_text)
+st.write("The Encryption level is :",str(cipher_class))
 
 def decryption_block_l1(ct):
     alphabet = 'abcdefghijklmnopqrstuvwxy'
