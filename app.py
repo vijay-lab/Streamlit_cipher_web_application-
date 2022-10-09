@@ -2,10 +2,12 @@ import streamlit as st
 import pandas as pd
 import pickle
 import sklearn
+import random
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 
              
+
 
 st.title("Encrypted Text Decryption App")
 cipher_text = st.text_area( label = "Enter Encrypted Text to Decrypt")
@@ -13,20 +15,20 @@ cipher_text = st.text_area( label = "Enter Encrypted Text to Decrypt")
 
 plain_text_df = pd.read_csv('test.csv')
 
-def random_plain_text(plain_text_df):
-    return plain_text_df.sample()
+index_df = random.randint(0,len(plain_text_df))
 
-random_cipher_df = random_plain_text(plain_text_df)
+def random_index(plain_text_df):
+    return random.randint(0,len(plain_text_df))
+
 
 if st.button('Generate new Cipher Text'):
-    random_plain_text(plain_text_df)
+    random_cipher_df_index = random_index(plain_text_df)
    
-random_cipher_df = random_plain_text(plain_text_df)
 
-st.dataframe(data = random_cipher_df)
+st.dataframe(plain_text_df.iloc[random_cipher_df_index])
 
 st.write("Use this cipher text to test the application")
-st.text(plain_text_df['ciphertext'][0])
+st.text(df.ciphertext[random_plain_text_index(plain_text_df)])
 
 
 def predict_cipher_class(cipher_text):
