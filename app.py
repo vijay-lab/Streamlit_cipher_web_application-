@@ -9,6 +9,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
              
 
 random_cipher_df_index = 0
+cipher_class = 1
 
 st.title("Encrypted Text Decryption App")
 
