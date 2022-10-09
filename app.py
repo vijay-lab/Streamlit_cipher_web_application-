@@ -26,7 +26,7 @@ random_cipher_df = random_plain_text(plain_text_df)
 st.dataframe(data = random_cipher_df)
 
 st.write("Use this cipher text to test the application")
-st.write(random_cipher_df['ciphertext']
+st.write(random_cipher_df['ciphertext'])
 
 
 def predict_cipher_class(cipher_text):
