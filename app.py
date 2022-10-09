@@ -6,7 +6,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 
 
 st.title("Encrypted Text Decryption App")
-cipher_text = st.text_input("Enter encrypted text", "")
+cipher_text = st.text_area("Enter encrypted text", "")
 
 
 loaded_vectorizer = pickle.load(open('vectorizer.pickle', 'rb'))
