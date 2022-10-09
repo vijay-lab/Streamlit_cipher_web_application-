@@ -19,7 +19,7 @@ def random_index(plain_text_df):
     return random.randint(0,len(plain_text_df))
 
 random_cipher_df_index = random_index(plain_text_df)
-if st.button('Generate new Cipher Text'):
+if st.button('Generate a new sample Cipher Text'):
   random_cipher_df_index = random_index(plain_text_df)
 
 
@@ -30,6 +30,7 @@ st.text(plain_text_df.ciphertext[random_cipher_df_index])
 
 cipher_text = st.text_area( label = "Enter Encrypted Text to Decrypt")
 
+@st.cache
 def predict_cipher_class(cipher_text):
     
     loaded_vectorizer = pickle.load(open('vectorizer.pickle', 'rb'))
