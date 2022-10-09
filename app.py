@@ -8,9 +8,10 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 
              
 
+random_cipher_df_index = 0
 
 st.title("Encrypted Text Decryption App")
-cipher_text = st.text_area( label = "Enter Encrypted Text to Decrypt")
+
 
 
 plain_text_df = pd.read_csv('test.csv')
@@ -29,6 +30,7 @@ st.dataframe(plain_text_df.iloc[random_cipher_df_index])
 st.write("Use this cipher text to test the application")
 st.text(plain_text_df.ciphertext[random_cipher_df_index])
 
+cipher_text = st.text_area( label = "Enter Encrypted Text to Decrypt")
 
 def predict_cipher_class(cipher_text):
     
