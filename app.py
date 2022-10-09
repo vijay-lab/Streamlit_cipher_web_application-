@@ -8,14 +8,17 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 st.title("Encrypted Text Decryption App")
 cipher_text = st.text_area( label = "Enter Encrypted Text to Decrypt")
 
+@st.cache
+def predict(cipher_text):
+    
+    loaded_vectorizer = pickle.load(open('vectorizer.pickle', 'rb'))
+    loaded_model = pickle.load(open('finalized_model.sav', 'rb'))
+    plain_text_dict = pickle.load(open('plain_text_dict.var', 'rb'))
+    test_vec = loaded_vectorizer.transform([cipher_text])
+    cipher_class = loaded_model.predict(test_vec)
+    return cipher_class
 
-loaded_vectorizer = pickle.load(open('vectorizer.pickle', 'rb'))
-loaded_model = pickle.load(open('finalized_model.sav', 'rb'))
-plain_text_dict = pickle.load(open('plain_text_dict.var', 'rb'))
-test_vec = loaded_vectorizer.transform([cipher_text])
-cipher_class = loaded_model.predict(test_vec)
-
-st.text("The Encryption level is :",cipher_class)
+st.write("The Encryption level is :",cipher_class)
 
 
 
@@ -113,5 +116,5 @@ if cipher_class == 3:
 if cipher_class == 4:
         dec_text = find_pt_index(decryption_block_l1(decryption_block_l2(decryption_block_l3(decryption_block_l4(cipher_text)))))
     
- 
+st.subheader("The decrypted Text is:") 
 st.text(dec_text)
