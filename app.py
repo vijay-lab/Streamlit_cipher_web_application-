@@ -82,7 +82,7 @@ def find_pt_index(decrypted_text):
 
         try:
             if plain_text_dict[decrypted_text[start:end]]  > 0:
-                dec_text = decrypted_text[start:end]
+                decrypted_text_without_padding = decrypted_text[start:end]
             break
 
         except KeyError:
