@@ -6,30 +6,7 @@ import random
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 
-             
-
-st.title("Encrypted Text Decryption App")
-
-
-
-plain_text_df = pd.read_csv('test.csv')
-
-
-def random_index(plain_text_df):
-    return random.randint(0,len(plain_text_df))
-
-random_cipher_df_index = random_index(plain_text_df)
-if st.button('Generate a new sample Cipher Text'):
-  random_cipher_df_index = random_index(plain_text_df)
-
-
-st.dataframe(plain_text_df.iloc[random_cipher_df_index])
-
-st.write("Use this cipher text to test the application")
-st.text(plain_text_df.ciphertext[random_cipher_df_index])
-
-cipher_text = st.text_area( label = "Enter Encrypted Text to Decrypt")
-
+            
 
 def predict_cipher_class(cipher_text):
     
