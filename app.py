@@ -78,6 +78,8 @@ def decryption_block_l3(text, key=key_level3):
     return x
 
 def find_pt_index(decrypted_text):
+    decrypted_text_without_padding = ""
+
 
     for pad in range(100):
         start = pad // 2
@@ -104,6 +106,7 @@ def decryption_block_l4(text, key=key4):
 
 
 def decrypted_text_switch(cipher_text,cipher_class):
+    dec_text = ""
     if cipher_class == 1:
         dec_text = find_pt_index(decryption_block_l1(cipher_text))
 
