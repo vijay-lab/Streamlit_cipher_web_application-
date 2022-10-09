@@ -4,7 +4,7 @@ import pickle
 import sklearn
 from sklearn.feature_extraction.text import TfidfVectorizer
 
-plain_text_df = pd.Dataframe('test.csv')
+plain_text_df = pd.read_csv('test.csv')
 
 def random_plain_text(plain_text_df):
     return plain_text_df.sample()
