@@ -18,11 +18,10 @@ plain_text_df = pd.read_csv('test.csv')
 def random_index(plain_text_df):
     return random.randint(0,len(plain_text_df))
 
-
+random_cipher_df_index = random_index(plain_text_df)
 if st.button('Generate new Cipher Text'):
-  
   random_cipher_df_index = random_index(plain_text_df)
-   
+
 
 st.dataframe(plain_text_df.iloc[random_cipher_df_index])
 
