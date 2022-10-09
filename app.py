@@ -15,7 +15,7 @@ plain_text_dict = pickle.load(open('plain_text_dict.var', 'rb'))
 test_vec = loaded_vectorizer.transform([cipher_text])
 cipher_class = loaded_model.predict(test_vec)
 
-st.write(cipher_class)
+st.text("The Encryption level is :",cipher_class)
 
 
 
@@ -114,4 +114,4 @@ if cipher_class == 4:
         dec_text = find_pt_index(decryption_block_l1(decryption_block_l2(decryption_block_l3(decryption_block_l4(cipher_text)))))
     
  
-st.write(dec_text)
+st.text(dec_text)
