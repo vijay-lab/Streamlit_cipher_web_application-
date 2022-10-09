@@ -30,7 +30,7 @@ st.text(plain_text_df.ciphertext[random_cipher_df_index])
 
 cipher_text = st.text_area( label = "Enter Encrypted Text to Decrypt")
 
-@st.cache
+
 def predict_cipher_class(cipher_text):
     
     loaded_vectorizer = pickle.load(open('vectorizer.pickle', 'rb'))
