@@ -4,6 +4,20 @@ import pickle
 import sklearn
 from sklearn.feature_extraction.text import TfidfVectorizer
 
+plain_text_df = pd.Dataframe('test.csv')
+
+def random_plain_text(plain_text_df):
+    return plain_text_df.sample()
+
+random_cipher_df = random_plain_text(plain_text_df)
+
+if st.button('Generate new Cipher Text'):
+    random_plain_text(plain_text_df)
+   
+random_cipher_df = random_plain_text(plain_text_df)
+
+st.dataframe(data = random_cipher_df)
+             
 
 st.title("Encrypted Text Decryption App")
 cipher_text = st.text_area( label = "Enter Encrypted Text to Decrypt")
