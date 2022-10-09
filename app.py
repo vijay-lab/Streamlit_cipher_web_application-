@@ -153,8 +153,8 @@ dec_text = decrypted_text_switch(cipher_text,cipher_class)
 
 if len(cipher_text) > 0:
   
-  st.write("The Encryption level is :", str(cipher_class),"and the decrypted text is",st.text(dec_text))
+  st.write("The Encryption level is :", str(cipher_class),"and the decrypted text is")
   
   
 #st.subheader("The decrypted Text is:") 
-#st.text(dec_text)
+st.text(dec_text)
