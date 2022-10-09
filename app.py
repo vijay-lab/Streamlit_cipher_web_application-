@@ -9,7 +9,6 @@ from sklearn.feature_extraction.text import TfidfVectorizer
              
 
 random_cipher_df_index = 0
-cipher_class = 1
 
 st.title("Encrypted Text Decryption App")
 
@@ -45,7 +44,9 @@ def predict_cipher_class(cipher_text):
 
 
 cipher_class,plain_text_dict = predict_cipher_class(cipher_text)
-st.write("The Encryption level is :", str(cipher_class))
+if len(cipher_text) > 0:
+  
+  st.write("The Encryption level is :", str(cipher_class))
 
 
 
