@@ -103,18 +103,21 @@ def decryption_block_l4(text, key=key4):
     return ''.join([chr(a^b) for a,b in zip(base64.b64decode(text),key)])
 
 
+def decrypted_text_switch(cipher_text,cipher_class):
+    if cipher_class == 1:
+        dec_text = find_pt_index(decryption_block_l1(cipher_text))
 
-if cipher_class == 1:
-    dec_text = find_pt_index(decryption_block_l1(cipher_text))
-    
-if cipher_class == 2:
-    dec_text = find_pt_index(decryption_block_l1(decryption_block_l2(cipher_text)))
-    
-if cipher_class == 3:
-    dec_text = find_pt_index(decryption_block_l1(decryption_block_l2(decryption_block_l3(cipher_text))))
+    if cipher_class == 2:
+        dec_text = find_pt_index(decryption_block_l1(decryption_block_l2(cipher_text)))
 
-if cipher_class == 4:
+    if cipher_class == 3:
+        dec_text = find_pt_index(decryption_block_l1(decryption_block_l2(decryption_block_l3(cipher_text))))
+
+    if cipher_class == 4:
         dec_text = find_pt_index(decryption_block_l1(decryption_block_l2(decryption_block_l3(decryption_block_l4(cipher_text)))))
-    
+       return dec_text
+
+decrypted_text_switch(cipher_text,cipher_class)
+
 st.subheader("The decrypted Text is:") 
 st.text(dec_text)
