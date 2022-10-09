@@ -8,7 +8,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 st.title("Encrypted Text Decryption App")
 cipher_text = st.text_area( label = "Enter Encrypted Text to Decrypt")
 
-@st.cache
+@st.cache(suppress_st_warning=True)
 def predict_cipher_class(cipher_text):
     
     loaded_vectorizer = pickle.load(open('vectorizer.pickle', 'rb'))
