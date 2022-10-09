@@ -10,18 +10,19 @@ cipher_text = st.text_area( label = "Enter Encrypted Text to Decrypt")
 
 @st.cache
 def predict_cipher_class(cipher_text):
-    cipher_label = "No Encrypted Text Entered"
+    
     loaded_vectorizer = pickle.load(open('vectorizer.pickle', 'rb'))
     loaded_model = pickle.load(open('finalized_model.sav', 'rb'))
     plain_text_dict = pickle.load(open('plain_text_dict.var', 'rb'))
     test_vec = loaded_vectorizer.transform([cipher_text])
     cipher_label = loaded_model.predict(test_vec)
+    st.write("The Encryption level is :",str(cipher_class))
     return cipher_label,plain_text_dict
 
 
 
 cipher_class,plain_text_dict = predict_cipher_class(cipher_text)
-st.write("The Encryption level is :",str(cipher_class))
+
 
 def decryption_block_l1(ct):
     alphabet = 'abcdefghijklmnopqrstuvwxy'
