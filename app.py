@@ -118,7 +118,7 @@ def decrypted_text_switch(cipher_text,cipher_class):
     
     return dec_text
 
-decrypted_text_switch(cipher_text,cipher_class)
+dec_text = decrypted_text_switch(cipher_text,cipher_class)
 
 st.subheader("The decrypted Text is:") 
 st.text(dec_text)
