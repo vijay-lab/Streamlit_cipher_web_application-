@@ -22,8 +22,8 @@ def predict_cipher_class(cipher_text):
 
 
 cipher_class,plain_text_dict = predict_cipher_class(cipher_text)
-st.write("The Encryption level is :")
-cipher_class
+st.write("The Encryption level is :", str(cipher_class))
+
 
 
 def decryption_block_l1(ct):
