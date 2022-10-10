@@ -176,4 +176,4 @@ dec_text = decrypted_text_switch(cipher_text,cipher_class)
 
 if len(cipher_text) > 0:
   
-  st.write("The Encryption level is :", str(cipher_class),"and the decrypted text is \n",dec_text)
+  st.write("The Encryption level is :", str(cipher_class),"and the decrypted text is: ",dec_text)
