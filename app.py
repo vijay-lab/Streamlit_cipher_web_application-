@@ -30,7 +30,7 @@ text-align: center;
 }
 </style>
 <div class="footer">
-<p>Developed with <span style = "color:red">❤</span> by <a style='display: block; text-align: center;' href="https://www.linkedin.com/in/tapanvijay/" target="_blank"><span style = "color:white">Tapan Vijayvergiya</span></a></p>
+<p>Developed with <span style = "color:red">❤</span> by <a style='display: block; ' href="https://www.linkedin.com/in/tapanvijay/" target="_blank"><span style = "color:white">Tapan Vijayvergiya</span></a></p>
 </div>
 """
 st.markdown(footer,unsafe_allow_html=True)
